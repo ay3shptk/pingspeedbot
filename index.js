@@ -53,26 +53,37 @@ app.get('/bulk', function (request, response) {
   }
   //console.log(splitt)
   y = 0
+
   while(y < splitt.length){
     console.log(y)
     var url = splitt[y][0]
     var port = splitt[y][1]
+   
     y++
-  http.get('http://localhost:3000/p?s=' + url + '&p=' + port, (resp) => {
+    
+    http.get('http://localhost:3000/p?s=' + url + '&p=' + port, (resp) => {
+    
     let data = '';
+    
     resp.on('data', (chunk) => {
       data += chunk;
-    });  
-  resp.on('end', () => {
-      datax.push(JSON.parse(data))    
+    }); 
+
+    resp.on('end', () => {
+        datax.push(JSON.parse(data))   
+             
     });
+        
 
   }).on("error", (err) => {
-  console.log("Error: " + err.message);
+    console.log("Error: " + err.message);
+
+  });
+  } 
+  console.log("data" + datax)
+  setTimeout(function() { response.json(datax) }, 1000);  
 });
-}
-response.json(datax)
-});
+
 
 
 const listener = app.listen(3000, function () {
