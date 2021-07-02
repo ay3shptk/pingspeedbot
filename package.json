@@ -1,1 +1,33 @@
-
+{
+  "//1": "A simple api to get ping speeds of any website ",
+  "//2": "",
+  "//3": "",
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "A simple api to get ping speeds of any website ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev" : "nodemon index.jsd"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "tcp-ping": "^0.1.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/ayshptk/pingspeedbot"
+  },
+  "license": "WTFPL",
+  "keywords": [
+    "ping",
+    "speed",
+    "ayshptk"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "author": "Ayush Pathak <hey@ayush.sh> (https://ayush.sh)"
+}

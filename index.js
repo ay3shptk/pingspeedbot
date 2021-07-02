@@ -70,6 +70,7 @@ app.get('/bulk', function (request, response) {
     }); 
 
     resp.on('end', () => {
+        data.url = url
         datax.push(JSON.parse(data))   
              
     });
